@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pak Datacom Limited | AI-Powered Next-Gen Telecom Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --pdl-navy-dark: #0A192F;
+            --pdl-navy: #0F2548;
+            --pdl-blue: #005691;
+            --pdl-teal: #0083B0;
+            --pdl-cyan: #00B4DB;
+            --pdl-light-bg: #F4F7FA;
+            --pdl-card-bg: #112240;
+            --text-main: #232D3F;
+            --text-light: #8892B0;
+            --text-bright: #CCD6F6;
+            --white: #FFFFFF;
+            --accent-glow: rgba(0, 180, 219, 0.4);
+            --gradient-pdl: linear-gradient(135deg, #0F2548 0%, #0083B0 100%);
+            --gradient-ai: linear-gradient(135deg, #0083B0 0%, #00B4DB 100%);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        body {
+            background-color: var(--pdl-navy-dark);
+            color: var(--text-bright);
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* HEADER & TRANSFORMING MONOGRAM */
+        header {
+            background: rgba(15, 37, 72, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1deg solid rgba(0, 180, 219, 0.2);
+            padding: 12px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            text-decoration: none;
+        }
+
+        /* Monogram Transformation Badge */
+        .logo-badge {
+            width: 50px;
+            height: 50px;
+            background: var(--pdl-navy);
+            border: 2px solid var(--pdl-cyan);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            box-shadow: 0 0 15px var(--accent-glow);
+            animation: pulse-glow 3s infinite alternate;
+        }
+
+        .logo-badge .pdl-text {
+            font-weight: 800;
+            font-size: 1.1rem;
+            color: var(--white);
+            letter-spacing: -1px;
+        }
+
+        .logo-badge .ai-chip {
+            position: absolute;
+            bottom: -5px;
+            right: -5px;
+            background: var(--pdl-cyan);
+            color: var(--pdl-navy-dark);
+            font-size: 0.6rem;
+            font-weight: 800;
+            padding: 2px 5px;
+            border-radius: 4px;
+            text-transform: uppercase;
+        }
+
+        @keyframes pulse-glow {
+            0% { box-shadow: 0 0 10px rgba(0, 180, 219, 0.3); border-color: var(--pdl-teal); }
+            100% { box-shadow: 0 0 25px rgba(0, 180, 219, 0.8); border-color: var(--pdl-cyan); }
+        }
+
+        .brand-text h1 {
+            font-size: 1.2rem;
+            color: var(--white);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+
+        .brand-text p {
+            font-size: 0.75rem;
+            color: var(--pdl-cyan);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: var(--text-bright);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--pdl-cyan);
+        }
+
+        .btn-pdl {
+            background: var(--gradient-ai);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 4px 15px rgba(0, 131, 176, 0.3);
+        }
+
+        .btn-pdl:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 180, 219, 0.5);
+        }
+
+        /* HERO SECTION */
+        .hero {
+            padding: 160px 5% 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+            background: radial-gradient(circle at 80% 20%, rgba(0, 131, 176, 0.15) 0%, transparent 50%);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            padding: 6px 14px;
+            background: rgba(0, 180, 219, 0.1);
+            border: 1px solid var(--pdl-cyan);
+            border-radius: 20px;
+            color: var(--pdl-cyan);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            color: var(--white);
+            line-height: 1.2;
+            margin-bottom: 20px;
+            font-weight: 800;
+        }
+
+        .hero h2 span {
+            background: var(--gradient-ai);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            color: var(--text-light);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .hero-card {
+            background: var(--pdl-card-bg);
+            border: 1px solid rgba(0, 180, 219, 0.2);
+            border-radius: 16px;
+            padding: 25px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+            position: relative;
+        }
+
+        .tech-badge {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(15, 37, 72, 0.8);
+            padding: 10px 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border-left: 3px solid var(--pdl-cyan);
+        }
+
+        /* SERVICES SECTION */
+        .services {
+            padding: 80px 5%;
+            background: rgba(15, 37, 72, 0.3);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h3 {
+            font-size: 2.2rem;
+            color: var(--white);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--pdl-card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            transition: 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card.ai-highlight {
+            border: 1px solid var(--pdl-teal);
+            background: linear-gradient(180deg, #112240 0%, #0F2548 100%);
+        }
+
+        .service-card.ai-highlight::before {
+            content: "AI-POWERED";
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--pdl-cyan);
+            color: var(--pdl-navy-dark);
+            font-size: 0.65rem;
+            font-weight: 800;
+            padding: 3px 8px;
+            border-radius: 4px;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 131, 176, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.2rem;
+            color: var(--pdl-cyan);
+            margin-bottom: 20px;
+        }
+
+        .service-card h4 {
+            font-size: 1.3rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+        }
+
+        /* SIMULATOR SECTION */
+        .simulator {
+            padding: 80px 5%;
+        }
+
+        .sim-container {
+            background: var(--pdl-card-bg);
+            border: 1px solid rgba(0, 180, 219, 0.3);
+            border-radius: 16px;
+            padding: 30px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+
+        .sim-console {
+            background: #060D1A;
+            border-radius: 8px;
+            padding: 20px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.85rem;
+            color: #00FFC8;
+            height: 250px;
+            overflow-y: auto;
+        }
+
+        /* FOOTER */
+        footer {
+            background: var(--pdl-navy);
+            padding: 40px 5%;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER WITH TRANSFORMING MONOGRAM -->
+    <header>
+        <a href="#" class="logo-container">
+            <div class="logo-badge">
+                <span class="pdl-text">PDL</span>
+                <span class="ai-chip">AI</span>
+            </div>
+            <div class="brand-text">
+                <h1>Pak Datacom Ltd</h1>
+                <p>Telecom & AI Transformation</p>
+            </div>
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#traditional">Telecom Services</a></li>
+                <li><a href="#ai-services">AI Solutions</a></li>
+                <li><a href="#simulator">AI-NOC Live Demo</a></li>
+            </ul>
+        </nav>
+        <a href="#contact" class="btn-pdl">Submit AI Proposal</a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div>
+            <span class="hero-tag"><i class="fa-solid fa-microchip"></i> Next-Gen Enterprise Infrastructure</span>
+            <h2>Empowering Pakistan's Telecom Footprint with <span>Agentic AI</span></h2>
+            <p>From satellite VSAT and optical fiber backbones to autonomous AI-NOC telemetry, predictive power management, and smart civic infrastructure.</p>
+            <div class="hero-actions">
+                <a href="#ai-services" class="btn-pdl">Explore AI Services</a>
+                <a href="#simulator" class="btn-pdl" style="background: transparent; border: 1px solid var(--pdl-cyan);">View Live Demo</a>
+            </div>
+        </div>
+        <div class="hero-card">
+            <div class="tech-badge">
+                <i class="fa-solid fa-satellite-dish" style="color: var(--pdl-cyan);"></i>
+                <div>
+                    <h5 style="color:var(--white); font-size: 0.9rem;">VSAT & Satellite Link Health</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-light);">AI Rain Fade Compensation Active</p>
+                </div>
+            </div>
+            <div class="tech-badge">
+                <i class="fa-solid fa-bolt" style="color: #00FFC8;"></i>
+                <div>
+                    <h5 style="color:var(--white); font-size: 0.9rem;">Green AI Energy Optimizer</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-light);">Remote Site OpEx Saved: 34.8%</p>
+                </div>
+            </div>
+            <div class="tech-badge">
+                <i class="fa-solid fa-shield-halved" style="color: var(--pdl-cyan);"></i>
+                <div>
+                    <h5 style="color:var(--white); font-size: 0.9rem;">Enterprise RAG Knowledge Hub</h5>
+                    <p style="font-size: 0.75rem; color: var(--text-light);">Banking & Defense Secure Hybrid Cloud</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICES SECTION -->
+    <section class="services" id="ai-services">
+        <div class="section-title">
+            <h3>AI-Native Transformation Offerings</h3>
+            <p>Combining 3 decades of telecom reliability with cutting-edge artificial intelligence.</p>
+        </div>
+        <div class="services-grid">
+            <div class="service-card ai-highlight">
+                <div class="service-icon"><i class="fa-solid fa-network-wired"></i></div>
+                <h4>PDL AI-NOC Automation</h4>
+                <p>Multi-Agent systems (CrewAI/RAG) integrated with NOC telemetry for predictive satellite link compensation and 60% faster ticket resolution.</p>
+            </div>
+            <div class="service-card ai-highlight">
+                <div class="service-icon"><i class="fa-solid fa-city"></i></div>
+                <h4>Safe City & Civic AI Hub</h4>
+                <p>Vision AI platforms for municipal safety, traffic optimization, and automated emergency dispatch integrated with legacy VMS systems.</p>
+            </div>
+            <div class="service-card ai-highlight">
+                <div class="service-icon"><i class="fa-solid fa-solar-panel"></i></div>
+                <h4>Green AI Energy Manager</h4>
+                <p>Predictive load switching for remote hybrid VSAT sites (Solar/Grid/Battery/Gen) reducing site fuel OpEx by up to 35%.</p>
+            </div>
+            <div class="service-card ai-highlight">
+                <div class="service-icon"><i class="fa-solid fa-user-shield"></i></div>
+                <h4>Enterprise Managed RAG</h4>
+                <p>On-premise secure AI knowledge assistants tailored for high-security Banking, Defense, and Oil & Gas corporate clients.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- LIVE DEMO SIMULATOR -->
+    <section class="simulator" id="simulator">
+        <div class="section-title">
+            <h3>Interactive AI-NOC Simulator Demo</h3>
+            <p>Click below to simulate real-time AI fault detection and automated dispatching.</p>
+        </div>
+        <div class="sim-container">
+            <div>
+                <h4 style="color:var(--white); margin-bottom: 15px;">Simulate Network Event:</h4>
+                <button class="btn-pdl" onclick="runSim('vsat')" style="margin-bottom: 10px; width: 100%;">Simulate VSAT Rain Fade (Quetta Hub)</button>
+                <button class="btn-pdl" onclick="runSim('fiber')" style="margin-bottom: 10px; width: 100%; background: var(--pdl-navy); border: 1px solid var(--pdl-cyan);">Simulate Fiber Cut (Lahore Route)</button>
+                <button class="btn-pdl" onclick="runSim('power')" style="width: 100%; background: var(--pdl-navy); border: 1px solid var(--pdl-cyan);">Simulate Remote Generator Load Switching</button>
+            </div>
+            <div class="sim-console" id="console">
+                > System Idle. Waiting for network telemetry simulation...<br>
+                > All AI Agents Standing By.
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>&copy; 2026 Pak Datacom Limited (PDL). Strategic AI Transformation Concept Proposal.</p>
+        <p style="font-size: 0.8rem; margin-top: 5px; color: var(--pdl-cyan);">Designed by Dawood Ahmad Khan | Ex-PDL Operational Specialist & Certified Agentic AI Application Developer</p>
+    </footer>
+
+    <script>
+        function runSim(type) {
+            const consoleBox = document.getElementById('console');
+            if(type === 'vsat') {
+                consoleBox.innerHTML = `
+                    <span style="color:#FFF;">[10:18:02] TELEMETRY ALERT:</span> Signal degradation on VSAT Node #402 (Quetta)...<br>
+                    <span style="color:#00B4DB;">[10:18:03] AI-MONITOR:</span> Rain Fade detected. Attenuation: -4.2 dB.<br>
+                    <span style="color:#00FFC8;">[10:18:04] AI-AGENT DISPATCH:</span> Dynamically boosting uplink power & adjusting modulation.<br>
+                    <span style="color:#00FFC8;">[10:18:05] RESOLVED:</span> Link stabilized. Zero packet loss reported. Ticket logged automatically.
+                `;
+            } else if(type === 'fiber') {
+                consoleBox.innerHTML = `
+                    <span style="color:#FF4A4A;">[10:18:12] CRITICAL ALERT:</span> Optical Fiber Link Loss detected (Lahore-Multan Segment).<br>
+                    <span style="color:#00B4DB;">[10:18:13] AI-DIAGNOSTIC:</span> RAG Model pinpointing break location at KM 142.8.<br>
+                    <span style="color:#00FFC8;">[10:18:14] AI-ACTION:</span> Traffic re-routed via Secondary Radio Backup Link.<br>
+                    <span style="color:#00FFC8;">[10:18:15] DISPATCH:</span> Field Maintenance Team alert dispatched with GPS coordinates.
+                `;
+            } else if(type === 'power') {
+                consoleBox.innerHTML = `
+                    <span style="color:#FFF;">[10:18:22] POWER MONITOR:</span> Commercial grid failure at Remote VSAT Site #88.<br>
+                    <span style="color:#00B4DB;">[10:18:23] GREEN AI AGENT:</span> Analyzing solar battery reserves vs weather forecast.<br>
+                    <span style="color:#00FFC8;">[10:18:24] AI OPTIMIZATION:</span> Switching to Hybrid Solar/Battery reserve (Delaying Gen start by 3 hrs).<br>
+                    <span style="color:#00FFC8;">[10:18:25] OPEX SAVED:</span> 18.5 Liters of Diesel fuel conserved.
+                `;
+            }
+        }
+    </script>
+</body>
+</html>
