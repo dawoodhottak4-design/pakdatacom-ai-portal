@@ -39,7 +39,7 @@
             line-height: 1.6;
         }
 
-        /* HEADER & TRANSFORMING MONOGRAM */
+        /* HEADER & ENHANCED TRANSFORMING MONOGRAM */
         header {
             background: rgba(15, 37, 72, 0.95);
             backdrop-filter: blur(10px);
@@ -47,7 +47,7 @@
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1deg solid rgba(0, 180, 219, 0.2);
+            border-bottom: 1px solid rgba(0, 180, 219, 0.2);
             padding: 12px 5%;
             display: flex;
             justify-content: space-between;
@@ -61,44 +61,60 @@
             text-decoration: none;
         }
 
-        /* Monogram Transformation Badge */
+        /* Enhanced Transforming Monogram Style */
         .logo-badge {
-            width: 50px;
-            height: 50px;
-            background: var(--pdl-navy);
-            border: 2px solid var(--pdl-cyan);
-            border-radius: 12px;
+            width: 60px;
+            height: 52px;
+            background: linear-gradient(135deg, #0F2548 0%, #005691 100%);
+            border: 2px solid #00B4DB;
+            border-radius: 10px;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             position: relative;
-            box-shadow: 0 0 15px var(--accent-glow);
-            animation: pulse-glow 3s infinite alternate;
+            box-shadow: 0 0 15px rgba(0, 180, 219, 0.5);
+            animation: pdl-ai-transform 4s ease-in-out infinite alternate;
         }
 
         .logo-badge .pdl-text {
-            font-weight: 800;
+            font-weight: 900;
             font-size: 1.1rem;
-            color: var(--white);
-            letter-spacing: -1px;
+            color: #FFFFFF;
+            letter-spacing: 0.5px;
+            line-height: 1;
         }
 
         .logo-badge .ai-chip {
             position: absolute;
-            bottom: -5px;
-            right: -5px;
-            background: var(--pdl-cyan);
-            color: var(--pdl-navy-dark);
-            font-size: 0.6rem;
+            bottom: -6px;
+            right: -6px;
+            background: #00FFC8;
+            color: #0A192F;
+            font-size: 0.65rem;
             font-weight: 800;
-            padding: 2px 5px;
+            padding: 2px 6px;
             border-radius: 4px;
-            text-transform: uppercase;
+            box-shadow: 0 0 10px rgba(0, 255, 200, 0.8);
         }
 
-        @keyframes pulse-glow {
-            0% { box-shadow: 0 0 10px rgba(0, 180, 219, 0.3); border-color: var(--pdl-teal); }
-            100% { box-shadow: 0 0 25px rgba(0, 180, 219, 0.8); border-color: var(--pdl-cyan); }
+        /* Continuous Transformation Animation */
+        @keyframes pdl-ai-transform {
+            0% {
+                border-color: #0083B0;
+                box-shadow: 0 0 8px rgba(0, 131, 176, 0.4);
+                transform: scale(1);
+            }
+            50% {
+                border-color: #00B4DB;
+                box-shadow: 0 0 20px rgba(0, 180, 219, 0.8);
+                transform: scale(1.03);
+            }
+            100% {
+                border-color: #00FFC8;
+                box-shadow: 0 0 25px rgba(0, 255, 200, 0.9);
+                transform: scale(1);
+            }
         }
 
         .brand-text h1 {
@@ -332,11 +348,17 @@
             color: var(--text-light);
             font-size: 0.9rem;
         }
+
+        @media(max-width: 768px) {
+            .hero { grid-template-columns: 1fr; padding-top: 130px; }
+            .sim-container { grid-template-columns: 1fr; }
+            nav ul { display: none; }
+        }
     </style>
 </head>
 <body>
 
-    <!-- HEADER WITH TRANSFORMING MONOGRAM -->
+    <!-- HEADER WITH ENHANCED TRANSFORMING MONOGRAM -->
     <header>
         <a href="#" class="logo-container">
             <div class="logo-badge">
@@ -351,16 +373,15 @@
         <nav>
             <ul>
                 <li><a href="#about">About</a></li>
-                <li><a href="#traditional">Telecom Services</a></li>
                 <li><a href="#ai-services">AI Solutions</a></li>
                 <li><a href="#simulator">AI-NOC Live Demo</a></li>
             </ul>
         </nav>
-        <a href="#contact" class="btn-pdl">Submit AI Proposal</a>
+        <a href="#simulator" class="btn-pdl">Submit AI Proposal</a>
     </header>
 
     <!-- HERO SECTION -->
-    <section class="hero">
+    <section class="hero" id="about">
         <div>
             <span class="hero-tag"><i class="fa-solid fa-microchip"></i> Next-Gen Enterprise Infrastructure</span>
             <h2>Empowering Pakistan's Telecom Footprint with <span>Agentic AI</span></h2>
